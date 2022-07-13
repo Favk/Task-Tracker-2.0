@@ -1,0 +1,15 @@
+<form *ngIf="showSend" class="add-form" (ngSubmit)="onSend()">
+    <div class="form-control">
+        <label for="text">Name</label>
+        <input type="text" name="text" [(ngModel)]="name" id="text" placeholder="Full Name">
+    </div>
+    <div class="form-control">
+        <label for="text">Email</label>
+        <input type="text" name="email" [(ngModel)]="email" id="email" placeholder="Email address">
+    </div>
+    <div class="form-control">
+        <label for="reminder">Reminder</label>
+        <textarea name="reminder" [(ngModel)]="reminder" id="reminder" cols="58" rows="10"></textarea>
+    </div>
+    <input type="submit" value="Send Task" class="btn btn-block">
+</form>
