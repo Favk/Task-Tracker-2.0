@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Subscription } from "rxjs";
 import { UiService } from "../../services/ui.service";
+import { EmailService } from "../../services/email.service";
 
 @Component({
   selector: 'app-contact',
@@ -16,7 +17,7 @@ export class ContactComponent implements OnInit {
   subscription: Subscription;
   showSend: boolean = false;
 
-  constructor(private uiService: UiService) { 
+  constructor(private uiService: UiService, private emailService: EmailService) { 
     this.subscription = this.uiService.onToggleSend().subscribe((value) => (this.showSend = value));
    }
 
